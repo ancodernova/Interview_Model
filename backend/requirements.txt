@@ -1,0 +1,13 @@
+flask
+flask_sqlalchemy
+flask_bcrypt
+flask_jwt_extended
+psycopg2-binary
+redis
+faiss-cpu
+gtts
+openai-whisper
+pdfplumber
+python-dotenv
+sentence-transformers
+requests

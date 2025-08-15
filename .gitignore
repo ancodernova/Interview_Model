@@ -1,0 +1,95 @@
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+*.env
+*.env.*
+
+# Python logs
+*.log
+*.pot
+*.py~
+
+
+# ------------------------
+# Node / Next.js
+# ------------------------
+node_modules/
+.next/
+out/
+dist/
+build/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnp/
+.pnp.js
+.pnp.cjs
+
+# Next.js cache
+.next/cache/
+
+# Generated files
+*.tsbuildinfo
+
+
+# ------------------------
+# Environment & Secrets
+# ------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# ------------------------
+# OS / Editor / IDE
+# ------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.temp
+*.log
+
+
+# ------------------------
+# Other
+# ------------------------
+# Coverage reports
+coverage/
+*.lcov
+
+# Redis dump
+dump.rdb
+
+# Database files
+*.sqlite3
+
+# Uploads / user-generated content (optional, if stored locally)
+uploads/
+media/

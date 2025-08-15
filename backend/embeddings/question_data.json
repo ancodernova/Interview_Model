@@ -1,0 +1,560 @@
+[
+  {
+    "id": "8e89a6e4-dcfa-4b17-ba43-97c782b4940a",
+    "question": ": Can you explain what a class is in OOP?",
+    "answer": "A class is a blueprint for creating objects. It defines a datatype by bundling data (attributes) and methods (functions) that work on the data into a single unit. Follow-up Question: Can you provide a real-life example? Real-life Example: Consider a class Car which defines attributes like color, brand, and methods like drive(), stop(). public class Car { String color; String brand; void drive() { System.out.println(brand + \" is driving.\"); } void stop() { System.out.println(brand + \" has stopped.\"); } } 2. What is an Object?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "ec07d05a-a416-4dde-bfa4-adcc7362a445",
+    "question": ": What is an object in OOP?",
+    "answer": "An object is an instance of a class. It represents a real-world entity with state and behavior defined by the class. Follow-up Question: Can you create an object from the Car class and use its methods? Real-life Example: A specific car like a red Toyota. public class Main { public static void main(String[] args) { Car myCar = new Car(); myCar.color = \"Red\"; myCar.brand = \"Toyota\"; myCar.drive(); myCar.stop(); } } 3. What is Encapsulation?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "7fa47a68-5b3e-43cc-b6b1-f7115c222b2f",
+    "question": ": What is encapsulation?",
+    "answer": "Encapsulation is the mechanism of wrapping data (variables) and code (methods) together as a single unit, restricting direct access to some components. Follow-up Question: Why is encapsulation important? Real-life Example: Think of a capsule that contains medicine inside it, preventing exposure to its contents. public class Person { private String name; private int age; // Getter and Setter methods public String getName() { return name; } public void setName(String name) { this.name = name; } public int getAge() { return age; } public void setAge(int age) { this.age = age; } } 4. What is Polymorphism?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "0f989da7-a88c-4897-b483-57f6fb6d9238",
+    "question": ": What does polymorphism mean?",
+    "answer": "Polymorphism means \"many shapes\". It allows one interface to be used for a general class of actions, where the specific action is determined by the exact nature of the situation. Follow-up Question: Can you demonstrate polymorphism with method overloading and overriding? Real-life Example: A person can be a teacher, a father, and a friend in different contexts. Method Overloading (Compile-Time Polymorphism): public class MathUtils { public int add(int a, int b) { return a + b; } public double add(double a, double b) { return a + b; } } Method Overriding (Run-Time Polymorphism): class Animal { void sound() { System.out.println(\"Animal makes a sound\"); } } class Dog extends Animal { void sound() { System.out.println(\"Dog barks\"); } } public class Main { public static void main(String[] args) { Animal myDog = new Dog(); myDog.sound(); } } 5. What is Abstraction?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "4964f002-213c-4197-bb5b-192eb6a5642d",
+    "question": ": Can you explain abstraction?",
+    "answer": "Abstraction focuses on hiding the complex implementation details and showing only the necessary features, while encapsulation is about bundling the data and methods that operate on the data within a single unit and restricting access to some of the object's components. 6. What is Inheritance?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "44482ed3-a199-4278-8ca5-8a408abaff76",
+    "question": ": What is inheritance in OOP?",
+    "answer": "Inheritance is a mechanism where a new class is derived from an existing class, inheriting its attributes and methods. Follow-up Question: Can you provide a real-life example? Real-life Example: Consider a base class Doctor and derived classes Cardiologist, Orthopedic, GeneralSurgeon. class Doctor { void treatPatient() { System.out.println(\"Treating patient\"); } } class Cardiologist extends Doctor { void treatHeart() { System.out.println(\"Treating heart\"); } } public class Main { public static void main(String[] args) { Cardiologist doc = new Cardiologist(); doc.treatPatient(); doc.treatHeart(); } } 7. What is Overloading?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "2cbb8bd5-2b0b-4be0-b5fc-d9e695c3a55a",
+    "question": ": What is method overloading?",
+    "answer": "Overloading occurs when two or more methods in the same class have the same name but different parameters. Follow-up Question: Can you show an example? public class DisplayOverloading { public void display(int a) { System.out.println(\"Argument: \" + a); } public void display(String a) { System.out.println(\"Argument: \" + a); } public static void main(String[] args) { DisplayOverloading obj = new DisplayOverloading(); obj.display(1); obj.display(\"Hello\"); } } 8. What is Overriding?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "3227f8c7-78ae-4c05-b527-e5f9bfa1af88",
+    "question": ": What is method overriding?",
+    "answer": "Overriding occurs when a derived class has a definition for one of the member functions of the base class, replacing the base function. Follow-up Question: Can you show an example? class Parent { void show() { System.out.println(\"Parent's show()\"); } } class Child extends Parent { void show() { System.out.println(\"Child's show()\"); } public static void main(String[] args) { Parent obj = new Child(); obj.show(); } } 9. What is an Abstract Class?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "64d44e04-3225-4b8e-8bbf-17ac641815db",
+    "question": ": What is an abstract class?",
+    "answer": "Use an abstract class when you want to share code among several closely related classes. Use an interface when you want to specify that a class must implement certain methods, regardless of where the class is in the inheritance hierarchy. 10. What is an Interface?",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "b94a0b35-0b82-46f3-992a-1033f15aa0e2",
+    "question": ": What is an interface in Java?",
+    "answer": "An interface is a reference type in Java, similar to a class, that can contain only abstract methods. A class implements an interface, thereby inheriting the abstract methods of the interface. Follow-up Question: Can you provide an example? interface Animal { void eat(); void travel(); } class Mammal implements Animal { public void eat() { System.out.println(\"Mammal eats\"); } public void travel() { System.out.println(\"Mammal travels\"); } public static void main(String[] args) { Mammal m = new Mammal(); m.eat(); m.travel(); } } Difference Between Abstract Class and Interface Abstract Class: 1. Implementation: An abstract class can have both abstract methods (methods without a body) and concrete methods (methods with a body). This allows the abstract class to provide some default behavior. abstract class Animal { abstract void sound(); void sleep() { System.out.println(\"Animal is sleeping\"); } } class Dog extends Animal { void sound() { System.out.println(\"Dog barks\"); } } 1. Constructors: Abstract classes can have constructors, which can be used to initialize fields of the class. abstract class Vehicle { String type; Vehicle(String type) { this.type = type; } abstract void move(); } class Car extends Vehicle { Car() { super(\"Car\"); } void move() { System.out.println(\"Car is moving\"); } } 1. Instance Variables: Abstract classes can have instance variables. abstract class Shape { String color; Shape(String color) { this.color = color; } abstract void draw(); } class Circle extends Shape { Circle(String color) { super(color); } void draw() { System.out.println(\"Drawing a \" + color + \" circle\"); } } 1. Inheritance: A class can inherit only one abstract class (single inheritance). This is because Java does not support multiple inheritance with classes. 2. Access Modifiers: Abstract class methods can have any visibility: public, protected, private. 3. Use Case: Use abstract classes when you have a base class that should provide some default behavior that subclasses can override or use as-is. It is suitable when there is a clear hierarchical relationship between classes. Interface: 1. Implementation: Interfaces cannot have any implementation for methods (prior to Java 8). From Java 8 onwards, interfaces can have default and static methods with implementation. interface Animal { void sound(); default void sleep() { System.out.println(\"Animal is sleeping\"); } } class Dog implements Animal { public void sound() { System.out.println(\"Dog barks\"); } } 1. Constructors: Interfaces cannot have constructors. They cannot be used to create objects directly. 2. Instance Variables: Interfaces can only have constants (static final variables). interface Constants { int MAX_SPEED = 120; // implicitly public, static, and final } 1. Inheritance: A class can implement multiple interfaces (multiple inheritance). This is a way to overcome the limitation of single inheritance with classes. interface Animal { void eat(); } interface Mammal { void walk(); } class Dog implements Animal, Mammal { public void eat() { System.out.println(\"Dog eats\"); } public void walk() { System.out.println(\"Dog walks\"); } } 1. Access Modifiers: Interface methods are implicitly public. All methods in an interface are abstract (prior to Java 8), and cannot have any other visibility. 2. Use Case: Use interfaces when you want to define a contract for what a class can do, without dictating how it should do it. They are ideal for defining capabilities that can be shared across different classes that do not share a parent-child relationship. Summary Table: Feature Abstract Class Interface Method Implementation Can have both abstract and Can have default and static concrete methods methods (Java 8+) Constructors Can have constructors Cannot have constructors Instance Variables Can have instance variables Can only have static final variables Inheritance Supports single inheritance Supports multiple inheritance Access Modifiers Methods can have any Methods are implicitly public visibility Use Case Suitable for shared code Suitable for defining among related classes capabilities across classes Example Code for Abstract Class: abstract class Animal { abstract void sound(); void sleep() { System.out.println(\"Animal is sleeping\"); } } class Dog extends Animal { void sound() { System.out.println(\"Dog barks\"); } } Example Code for Interface: interface Animal { void sound(); default void sleep() { System.out.println(\"Animal is sleeping\"); } } class Dog implements Animal { public void sound() { System.out.println(\"Dog barks\"); } } By understanding the differences between abstract classes and interfaces, you can make more informed decisions about which to use in your Java programs based on the design requirements and constraints.",
+    "source": "OOPS Principles in JAVA.pdf"
+  },
+  {
+    "id": "30c1ceae-97fc-40e4-a44e-2c741d93ee43",
+    "question": "Data Redundancy and Inconsistency: DBMS controls data redundancy by integrating all the data into a single",
+    "answer": "database and thus reduces inconsistency.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "0ec92ebc-4c84-4743-bf40-8e33f0335612",
+    "question": "Backup and Recovery: DBMS offers robust backup and recovery options.",
+    "answer": "Follow-up Question: What is an example of data inconsistency? Answer: If customer information is stored in multiple files and one file is updated while the others are not, this creates inconsistency. Q4. What are the various types of DBMS? Give examples of each.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "685a4079-801d-45d9-b10f-637879de75a7",
+    "question": "Hierarchical DBMS: Data is organized into a tree-like structure. Example: IBM Information Management System",
+    "answer": "(IMS).",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "6542bef6-4837-4ea7-9ac8-ef32110f0ed2",
+    "question": "Network DBMS: Data is organized in a graph, allowing many-to-many relationships. Example: Integrated Data",
+    "answer": "Store (IDS).",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "09a5e40d-b8a7-488a-a2d1-49e2c3b4dc0f",
+    "question": "Object-oriented DBMS (OODBMS): Data is stored as objects, similar to object-oriented programming. Example:",
+    "answer": "db4o, ObjectDB.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "03faf57d-395e-4242-bb72-b2f4b93a4262",
+    "question": "NoSQL DBMS: Used for large-scale data storage and for real-time web applications. Example: MongoDB,",
+    "answer": "Cassandra. Follow-up Question: What is the primary difference between relational and object-oriented databases? Answer: Relational databases store data in tables and use SQL for queries, while object-oriented databases store data as objects, similar to programming languages like Java or C++. Q5. What is the difference between DBMS and RDBMS? Give examples of RDBMS. DBMS is a general term for a system that manages databases. RDBMS is a specific type of DBMS based on the relational model introduced by E.F. Codd. DBMS: Manages databases, does not necessarily use a tabular structure. Examples: File system, XML databases. RDBMS: Manages relational databases, uses tables with rows and columns. Examples: MySQL, PostgreSQL, Oracle, SQL Server. Follow-up Question: What is a relational model? Answer: A relational model is a way to structure and query data using relations (tables) with tuples (rows) and attributes (columns). Keys and Constraints Q6. What are super, primary, candidate, and foreign keys? Explain with examples. Also, what is the difference between primary and unique key? And difference between foreign key and primary key.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "f12affcd-b457-49e3-87a1-75c1b3b8c3f8",
+    "question": "Super Key: A set of one or more columns that uniquely identifies a row in a table.",
+    "answer": "Example: {StudentID, Email},",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "afd7220b-b845-4255-b778-a42bf2ba4a13",
+    "question": "Candidate Key: A minimal super key, i.e., a super key with no redundant attributes.",
+    "answer": "Example: ,",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "5ba1826a-1c33-472c-af2d-25fa17d5bb76",
+    "question": "Primary Key: A candidate key chosen to uniquely identify rows in a table. It cannot be NULL.",
+    "answer": "Example: StudentID",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "453aa694-98e1-4a60-806c-523967d9fb71",
+    "question": "Foreign Key: A column that creates a relationship between two tables. It references the primary key of another",
+    "answer": "table. Example: CourseID in Enrollments table referencing CourseID in Courses table. Difference between Primary Key and Unique Key: Primary Key: Uniquely identifies a row and cannot be NULL. Unique Key: Uniquely identifies a row but can have one NULL value. Difference between Foreign Key and Primary Key: Primary Key: Uniquely identifies a row within its table. Foreign Key: Establishes a relationship between rows in two tables. Follow-up Question: Why is a primary key important? Answer: It ensures each row is uniquely identifiable and enforces entity integrity. Database Normalization Q7. What is database normalization? Normalization is the process of organizing data to minimize redundancy and improve data integrity. It involves dividing large tables into smaller, related tables and defining relationships between them. Follow-up Question: Why is normalization important? Answer: It reduces data redundancy, ensures data integrity, and improves query performance. Q8. What are the various Normal Forms? Explain the use of all normal forms till BCNF with short examples.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "cab9859f-cf22-4941-ae72-ad63e063bc8b",
+    "question": "First Normal Form (1NF): Ensures that the table has only atomic (indivisible) values.",
+    "answer": "Example: A table with a column \"PhoneNumbers\" containing a single phone number per row.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "6c661d4f-5de4-4c0c-bc7a-b764d1ea1f66",
+    "question": "Second Normal Form (2NF): Meets all the requirements of 1NF and all non-key attributes are fully functional",
+    "answer": "dependent on the primary key. Example: Splitting a table with columns (StudentID, CourseID, Grade) into two tables, one with (StudentID, CourseID) and another with (CourseID, Grade).",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "f0626182-0f18-44ce-86b5-fcdbec8a13e2",
+    "question": "Third Normal Form (3NF): Meets all the requirements of 2NF and all non-key attributes are non-transitively",
+    "answer": "dependent on the primary key. Example: Removing columns like \"InstructorName\" from a table that only needs \"InstructorID\" and \"CourseID\".",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "117dd9d9-b5b2-4ec3-b9b8-3f136b4fe486",
+    "question": "Boyce-Codd Normal Form (BCNF): Meets all the requirements of 3NF and for every functional dependency (X",
+    "answer": "→ Y), X is a super key. Example: Ensuring that all functional dependencies have a super key as their determinant. Follow-up Question: Can you give an example of a table in 2NF but not in 3NF? Answer: A table with columns (StudentID, CourseID, InstructorID, InstructorName) where InstructorName is dependent on InstructorID, not on (StudentID, CourseID). Q9. Differentiate between 2NF and 3NF with example. And also between 3NF and BCNF. 2NF vs. 3NF: 2NF: Removes partial dependencies. 3NF: Removes transitive dependencies. Example: If a table (StudentID, CourseID, InstructorName) is in 2NF but not in 3NF because InstructorName depends on InstructorID, which is not a primary key. 3NF vs. BCNF: 3NF: Removes transitive dependencies. BCNF: Ensures that every determinant is a super key. Example: A table (CourseID, InstructorID, CourseTime) where InstructorID → CourseTime but InstructorID is not a super key. Follow-up Question: What is a transitive dependency? Answer: A transitive dependency is when a non-key attribute depends on another non-key attribute. Q10. What is data redundancy and how does normalization reduce that? Data redundancy occurs when the same piece of data is stored in multiple places. Normalization reduces redundancy by ensuring that data is stored in only one place and referenced elsewhere, preventing duplicate data entries. Follow-up Question: What is an example of data redundancy? Answer: Storing a student's address in multiple tables, which can lead to inconsistencies if one instance is updated but others are not. Q11. What is the relationship between Normal Forms and partial dependency and transitive dependency? 1NF: Eliminates repeating groups and ensures atomicity. 2NF: Eliminates partial dependencies (a non-key attribute depends on part of a composite key). 3NF: Eliminates transitive dependencies (a non-key attribute depends on another non-key attribute). BCNF: Ensures that every determinant is a super key. Follow-up Question: Can a table be in BCNF but not in 3NF? Answer: No, if a table is in BCNF, it is also in 3NF because BCNF is a stricter form of 3NF. SQL Concepts Q12. What is SQL? SQL (Structured Query Language) is a standardized programming language used to manage and manipulate relational databases. Follow-up Question: What are some common SQL operations? Answer: Common operations include SELECT, INSERT, UPDATE, DELETE, and JOIN. Q13. What is DDL, DML, and DCL in SQL? DDL (Data Definition Language): Defines the structure of the database. Commands: CREATE, ALTER, DROP. DML (Data Manipulation Language): Manipulates data stored in the database . Commands: SELECT, INSERT, UPDATE, DELETE. DCL (Data Control Language): Controls access to data in the database. Commands: GRANT, REVOKE. Follow-up Question: What does the ALTER command do? Answer: ALTER modifies the structure of an existing database object, such as a table. Q14. What is the difference between TRUNCATE, DELETE, and DROP commands? TRUNCATE: Removes all rows from a table without logging individual row deletions. Cannot be rolled back. DELETE: Removes specific rows based on a condition. Can be rolled back. DROP: Deletes the entire table structure along with its data. Cannot be rolled back. Follow-up Question: Which command would you use to remove all rows from a table but keep the table structure? Answer: TRUNCATE. Q15. What is the difference between HAVING and WHERE clause? WHERE: Filters rows before any groupings are made. HAVING: Filters groups after the GROUP BY clause has been applied. Example: SELECT Department, COUNT(*) FROM Employees WHERE Salary > 50000 GROUP BY Department HAVING COUNT(*) > 10; Follow-up Question: Can HAVING be used without GROUP BY? Answer: No, HAVING is used to filter groups, so it requires GROUP BY. Q16. What are the various aggregate operators in SQL? Explain with short examples.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "f984a9a1-39f7-400b-b219-3f1fb9adc7d1",
+    "question": "COUNT(): Returns the number of rows.",
+    "answer": "Example: SELECT COUNT(*) FROM Employees;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "39584f1d-a946-4256-b3ab-de9b5005438a",
+    "question": "SUM(): Returns the total sum of a numeric column.",
+    "answer": "Example: SELECT SUM(Salary) FROM Employees;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "c8af7ff7-f43d-4426-9224-475b17528156",
+    "question": "AVG(): Returns the average value of a numeric column.",
+    "answer": "Example: SELECT AVG(Salary) FROM Employees;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "5cf1284e-715b-4773-bc2b-2c0695c53469",
+    "question": "MAX(): Returns the maximum value in a column.",
+    "answer": "Example: SELECT MAX(Salary) FROM Employees;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "ce783d25-5f3d-45ea-b561-bb7a8877729f",
+    "question": "MIN(): Returns the minimum value in a column.",
+    "answer": "Example: SELECT MIN(Salary) FROM Employees; Follow-up Question: How would you find the highest salary in each department? Answer: SELECT Department, MAX(Salary) FROM Employees GROUP BY Department; Q17. What is GROUP BY and ORDER BY and the difference between them? GROUP BY: Groups rows sharing a property so aggregate functions can be applied. Example: SELECT Department, COUNT(*) FROM Employees GROUP BY Department; ORDER BY: Sorts the result set by specified columns. Example: SELECT * FROM Employees ORDER BY Salary DESC; Difference: GROUP BY: Used for aggregation. ORDER BY: Used for sorting results. Follow-up Question: Can you use ORDER BY with GROUP BY? Answer: Yes, to sort the grouped results. Q18. What are various kinds of joins? Give examples of each.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "edd757b4-707a-435e-9ab7-c1f07988b1b7",
+    "question": "INNER JOIN: Returns records that have matching values in both tables.",
+    "answer": "Example: SELECT Employees.Name, Departments.Name FROM Employees INNER JOIN Departments ON Employees.DepartmentID = Departments.ID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "5d3b9f67-353b-4c3b-96ad-3200d036edb6",
+    "question": "LEFT JOIN: Returns all records from the left table, and the matched records from the right table.",
+    "answer": "Example: SELECT Employees.Name, Departments.Name FROM Employees LEFT JOIN Departments ON Employees.DepartmentID = Departments.ID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "99ff065c-55e6-49e7-932b-bc731190c895",
+    "question": "RIGHT JOIN: Returns all records from the right table, and the matched records from the left table.",
+    "answer": "Example: SELECT Employees.Name, Departments.Name FROM Employees RIGHT JOIN Departments ON Employees.DepartmentID = Departments.ID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "e39719e3-e12a-4b4e-b6db-0ddb43df37e4",
+    "question": "FULL OUTER JOIN: Returns all records when there is a match in either left or right table.",
+    "answer": "Example: SELECT Employees.Name, Departments.Name FROM Employees FULL OUTER JOIN Departments ON Employees.DepartmentID = Departments.ID; Follow-up Question: When would you use a FULL OUTER JOIN? Answer: When you need to include all records from both tables, regardless of matches. Q19. What is the difference between self join and cross join? Show with example. Self Join: A table is joined with itself. Example: SELECT A.Name AS Employee1, B.Name AS Employee2 FROM Employees A, Employees B WHERE A.ManagerID = B.ID; Cross Join: Returns the Cartesian product of the two tables. Example: SELECT Employees.Name, Departments.Name FROM Employees CROSS JOIN Departments; Follow-up Question: What is a Cartesian product? Answer: The result of a CROSS JOIN, which is a set of all possible combinations of rows from two tables. Q20. What is the difference between inner join and outer join? Explain various kinds of outer joins with real-life example tables. Inner Join: Returns only the rows with matching values in both tables. Example: Joining Employees and Departments to list employees with their department names. Outer Join: Returns matched rows and unmatched rows from one or both tables.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "fb9f4d7a-54a6-4d40-a3e4-72262e378dd4",
+    "question": "Left Outer Join: Returns all rows from the left table and matched rows from the right table.",
+    "answer": "Example: List all employees and their departments, including employees without a department. SELECT Employees.Name, Departments.Name FROM Employees LEFT JOIN Departments ON Employees.DepartmentID = Departments.ID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "c5cac91c-78cf-47ae-8a93-718636587bfd",
+    "question": "Right Outer Join: Returns all rows from the right table and matched rows from the left table.",
+    "answer": "Example: List all departments and their employees, including departments without employees. SELECT Employees.Name, Departments.Name FROM Employees RIGHT JOIN Departments ON Employees.DepartmentID = Departments.ID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "34ce4dd1-0962-4e54-b8b2-d6d0c38e85a0",
+    "question": "Full Outer Join: Returns all rows when there is a match in either left or right table.",
+    "answer": "Example: List all employees and departments, including those without matches. SELECT Employees.Name, Departments.Name FROM Employees FULL OUTER JOIN Departments ON Employees.DepartmentID = Departments.ID; Follow-up Question: Which join would you use to find employees without a department? Answer: LEFT JOIN with a WHERE clause to filter NULL department values. SELECT Employees.Name FROM Employees LEFT JOIN Departments ON Employees.DepartmentID = Departments.ID WHERE Departments.ID IS NULL; ACID Properties Q21. Explain the ACID properties with examples.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "618ce318-f8e6-431d-8c32-695ab5e2dea0",
+    "question": "Atomicity: Ensures that all operations in a transaction are completed; if not, the transaction is aborted.",
+    "answer": "Example: Transferring money between accounts should either fully succeed or not at all.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "1a4a3fc6-da9d-408c-ae90-c75f925a4496",
+    "question": "Consistency: Ensures that a transaction brings the database from one valid state to another.",
+    "answer": "Example: Ensuring that after a transfer, the total amount in both accounts remains the same.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "5b4da3ab-cb85-439f-b338-37587b1d4187",
+    "question": "Isolation: Ensures that transactions are executed in isolation from one another.",
+    "answer": "Example: Concurrent transactions should not interfere with each other.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "d74f5b50-2170-4530-a730-6bb355221512",
+    "question": "Durability: Ensures that once a transaction is committed, it remains so, even in the event of a system failure.",
+    "answer": "Example: After completing a transfer, the changes should persist even if the system crashes. Follow-up Question: What happens if a transaction fails during execution? Answer: If a transaction fails, atomicity ensures that all previous operations are rolled back, leaving the database in its initial state. Frequently Asked SQL Queries Q22. Give 5 most frequently asked queries with solutions in interviews for a fresher.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "c46ffd46-ecae-4e72-85e4-4e7bffb83686",
+    "question": "Find all employees with salary greater than 50000.",
+    "answer": "SELECT * FROM Employees WHERE Salary > 50000;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "017c36de-f423-4519-a2df-444c57e29332",
+    "question": "List the number of employees in each department.",
+    "answer": "SELECT DepartmentID, COUNT(*) AS EmployeeCount FROM Employees GROUP BY DepartmentID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "cce200d7-f11f-4a1a-a480-e53b872fee28",
+    "question": "Retrieve employee names and their respective department names.",
+    "answer": "SELECT Employees.Name, Departments.Name AS DepartmentName FROM Employees INNER JOIN Departments ON Employees.DepartmentID = Departments.ID;",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "c77ed8b8-ba75-4e5c-8a30-4d9f285fcee5",
+    "question": "Find the second highest salary in the employees table.",
+    "answer": "SELECT MAX(Salary) AS SecondHighestSalary FROM Employees WHERE Salary < (SELECT MAX(Salary) FROM Employees);",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "e3f44e8c-a73b-41a6-8c66-87994e37398d",
+    "question": "Delete duplicate rows from a table based on a specific column.",
+    "answer": "DELETE FROM Employees WHERE ID NOT IN ( SELECT MIN(ID) FROM Employees GROUP BY Email ); Follow-up Question: How would you handle NULL values in a query? Answer: Use IS NULL or IS NOT NULL in the WHERE clause. SELECT * FROM Employees WHERE DepartmentID IS NULL; Certainly! Here are the SQL queries to retrieve the person with the highest salary and the person with the 5th highest salary: Query to get the person with the highest salary: SELECT Name, Salary FROM Employees WHERE Salary = (SELECT MAX(Salary) FROM Employees); Query to get the person with the 5th highest salary: To get the 5th highest salary, we can use a subquery with the DISTINCT clause and ORDER BY to sort the salaries, then use the OFFSET and LIMIT clauses. SELECT Name, Salary FROM Employees WHERE Salary = ( SELECT DISTINCT Salary FROM Employees ORDER BY Salary DESC OFFSET 4 ROWS FETCH NEXT 1 ROW ONLY ); Explanation:",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "fb1d1b6d-3504-4787-9930-79ed86dd3746",
+    "question": "Highest Salary:",
+    "answer": "The subquery SELECT MAX(Salary) FROM Employees finds the maximum salary in the Employees table. The outer query selects the Name and Salary of the employee(s) with that maximum salary.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "5a84431a-5e3b-49c4-85d4-ab893f7dfc1d",
+    "question": "5th Highest Salary:",
+    "answer": "The subquery SELECT DISTINCT Salary FROM Employees ORDER BY Salary DESC orders all distinct salaries in descending order. The OFFSET 4 ROWS skips the first 4 highest salaries. The FETCH NEXT 1 ROW ONLY retrieves the 5th highest salary. The outer query then selects the Name and Salary of the employee(s) with that salary. These queries assume the Employees table has columns Name and Salary. Adjust the column names if necessary to match your actual table structure. This guide should provide a comprehensive foundation for a fresher preparing for an interview in databases and SQL.",
+    "source": "dbms and sql interview prep.pdf"
+  },
+  {
+    "id": "738e5981-d744-42b0-a6c0-2606638a79cf",
+    "question": "Why is Java called platform-independent?",
+    "answer": "Answer: Java is called platform-independent because its code, once compiled, is transformed into bytecode by the Java Compiler. This bytecode is platform-neutral and can be executed on any platform that has a Java Virtual Machine (JVM). The JVM interprets the bytecode into machine-specific code, enabling the same Java program to run on various operating systems without modification. Example: A Java program compiled on Windows can run on Linux or Mac OS without any changes, provided the JVM is available on those platforms.",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "e0fd7951-b899-47b4-99c2-744a849ea0e6",
+    "question": "Explain JVM, JRE, and JDK.",
+    "answer": "Answer: JVM (Java Virtual Machine): An abstract machine that enables a computer to run Java programs. It converts bytecode into machine code. JRE (Java Runtime Environment): A package that includes the JVM and standard libraries, enabling the execution of Java applications. JDK (Java Development Kit): A complete package for Java development, including the JRE, compiler, and various development tools. Example: Developers use the JDK for coding and compiling Java programs, while end-users need the JRE to run these programs.",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "0985b384-4f67-4c2a-a309-191d29706fc2",
+    "question": "What is Bytecode and how does it make Java programs platform-independent?",
+    "answer": "Answer: Bytecode is an intermediate code generated by the Java compiler, which is platform-independent. The JVM on each platform interprets this bytecode into machine-specific instructions, allowing Java programs to run on any device with a JVM. Example: Bytecode for a Java program compiled on Windows can be executed on Linux using the Linux JVM.",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "dac9528a-c8cd-4a92-846e-bc333319ccda",
+    "question": "Compare features of Java with C and Python.",
+    "answer": "Answer: Java vs C: Memory Management: Java has automatic garbage collection, while C requires manual memory management. Platform Independence: Java is platform-independent through the JVM, while C is platform-dependent. Pointer Usage: Java does not use pointers explicitly, enhancing security and robustness, whereas C extensively uses pointers. Java vs Python: Performance: Java generally has better performance due to Just-In-Time (JIT) compilation, while Python is interpreted and tends to be slower. Syntax: Java syntax is verbose and strict, requiring explicit declarations, whereas Python syntax is concise and easier to read. Use Cases: Java is widely used for large-scale enterprise applications, whereas Python is favored for rapid development, scripting, and data science.",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "4dc71d62-bb7b-41ff-9c77-a990e20f2f58",
+    "question": "Explain the static keyword in Java.",
+    "answer": "Answer: The static keyword in Java indicates that a particular member (variable, method, or block) belongs to the class rather than instances of the class. This means static members are shared among all instances of the class. Example: class Example { static int count = 0; Example() { count++; } } public class Test { public static void main(String[] args) { new Example(); new Example(); System.out.println(Example.count); // Outputs: 2 } }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "ac7c330b-bce7-42e1-9985-fe8ce4e0a84b",
+    "question": "What is the use of the this keyword in Java?",
+    "answer": "Answer: The this keyword in Java is used to refer to the current object within a class. It helps to disambiguate instance variables from local variables when they have the same name. Example: class Example { int value; Example(int value) { this.value = value; // 'this.value' refers to the instance variable, 'value' to the parameter } }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "26533d46-3eb3-421d-8992-be2dd9461ad8",
+    "question": "Explain the various access specifiers in Java.",
+    "answer": "Answer: Java provides four access specifiers: Private: Accessible only within the same class. Default (no specifier): Accessible within the same package. Protected: Accessible within the same package and subclasses. Public: Accessible from any other class. Example: class Example { private int a; int b; // default protected int c; public int d; }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "112d8dd4-e549-4a54-9748-c16eedeac0b4",
+    "question": "What are collections in Java?",
+    "answer": "Answer: Collections in Java are frameworks that provide architecture to store and manipulate groups of objects. They include classes like ArrayList, HashSet, and HashMap and interfaces like List, Set, and Map. Collections help to achieve dynamic data structures and enhance the performance of Java programs by providing algorithms for sorting, searching, and manipulating data. Example: List<Integer> list = new ArrayList<>(); list.add(1); list.add(2); System.out.println(list); // Outputs: [1, 2]",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "eb84523b-f71a-44ab-9a84-37021e82b073",
+    "question": "What is garbage collection in Java?",
+    "answer": "Answer: Garbage collection in Java is an automatic process of reclaiming memory by the JVM. When objects are no longer reachable, the garbage collector removes them to free up memory. This helps prevent memory leaks and optimizes resource usage. Example: public class GarbageCollectorDemo { public static void main(String[] args) { GarbageCollectorDemo obj = new GarbageCollectorDemo(); obj = null; // Object is now eligible for garbage collection System.gc(); // Requesting JVM to perform garbage collection } @Override protected void finalize() throws Throwable { System.out.println(\"Garbage collector called\"); } }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "126916c9-21f5-40be-bd31-428dd1dc86c3",
+    "question": "Difference between Set, Map, and List.",
+    "answer": "Answer: Set: A collection that does not allow duplicate elements. Example: HashSet. Map: A collection of key-value pairs. Each key is unique. Example: HashMap. List: An ordered collection that allows duplicate elements. Example: ArrayList. Example: Set<Integer> set = new HashSet<>(); set.add(1); set.add(1); // No duplicate allowed Map<Integer, String> map = new HashMap<>(); map.put(1, \"one\"); map.put(2, \"two\"); List<Integer> list = new ArrayList<>(); list.add(1); list.add(1); // Duplicates allowed",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "c08176e2-bb7f-4ec7-b6b0-fb804803fd6c",
+    "question": "Why are strings immutable in Java?",
+    "answer": "Answer: Strings in Java are immutable to enhance security, performance, and synchronization. Immutable objects are thread-safe and can be shared freely between threads without additional synchronization. Additionally, immutable strings allow for efficient memory usage through string pooling. Example: String s1 = \"Hello\"; String s2 = s1; s1 = \"World\"; // s2 still references \"Hello\" System.out.println(s2); // Outputs: Hello",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "e97d1b3d-1cec-4276-b98c-a28b1be750ed",
+    "question": "How to compare strings in Java?",
+    "answer": "Answer: Strings in Java can be compared using the equals() method for content comparison and == operator for reference comparison. Example: String str1 = \"Java\"; String str2 = new String(\"Java\"); System.out.println(str1.equals(str2)); // Outputs: true System.out.println(str1 == str2); // Outputs: false",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "a1c7e02a-a37e-46ac-933a-65d70803edb5",
+    "question": "What are wrapper classes in Java?",
+    "answer": "Answer: Wrapper classes in Java provide a way to use primitive data types (int, char, etc.) as objects. Each primitive type has a corresponding wrapper class (Integer, Character, etc.). Wrapper classes are useful for collection frameworks that work with objects. Example: int num = 5; Integer numObj = Integer.valueOf(num); // Boxing int numAgain = numObj.intValue(); // Unboxing",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "b0a03412-6a8e-4152-8a0c-f1c92a206406",
+    "question": "Explain the concept of Autoboxing and Unboxing.",
+    "answer": "Answer: Autoboxing is the automatic conversion of primitive types to their corresponding wrapper classes. Unboxing is the reverse process. This feature simplifies the code by allowing seamless operations between primitives and their wrapper objects. Example: Integer obj = 10; // Autoboxing int num = obj; // Unboxing",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "bd76c073-dbed-4c38-aef1-f22f6e4bff7d",
+    "question": "What is the difference between == and equals() method in Java?",
+    "answer": "Answer: The == operator compares references or memory addresses, while the equals() method compares the actual content of the objects. Example: String str1 = new String(\"Test\"); String str2 = new String(\"Test\"); System.out.println(str1 == str2); // Outputs: false System.out.println(str1.equals(str2)); // Outputs: true",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "f76478f0-5609-46de-a19a-f91039f961be",
+    "question": "How is the creation of a String using new() different from that of a literal, and explain String Pool in this context.",
+    "answer": "Answer: When a string is created using a literal, it is added to the string pool, a special memory area in the JVM that stores unique string literals. If the same literal is used again, the JVM refers to the existing string in the pool. When a string is created using new(), a new object is created in the heap memory, even if an identical string exists in the pool. Example: String s1 = \"Hello\"; // Literal, added to string pool String s2 = \"Hello\"; // Refers to the same object in string pool String s3 = new String(\"Hello\"); // New object in heap System.out.println(s1 == s2); // Outputs: true System.out.println(s1 == s3); // Outputs: false",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "7bd7d86f-b789-4c66-b799-41e7ba8f1a41",
+    "question": "Explain the use of break and continue in loops.",
+    "answer": "Answer: Break: Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch. Continue: Skips the current iteration of the loop and proceeds to the next iteration. Example: for (int i = 0; i < 5; i++) { if (i == 2) break; // Exits loop when i is 2 System.out.println(i); } for (int i = 0; i < 5; i++) { if (i == 2) continue; // Skips the iteration when i is 2 System.out.println(i); }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "5c0318d6-c056-403e-91c9-2586a0fd7dff",
+    "question": "Difference between checked and unchecked exceptions and examples of each.",
+    "answer": "Answer: Checked Exceptions: Exceptions that are checked at compile-time. Example: IOException, SQLException. Unchecked Exceptions: Exceptions that occur at runtime. Example: NullPointerException, ArrayIndexOutOfBoundsException. Example: // Checked Exception try { FileReader file = new FileReader(\"nonexistent.txt\"); } catch (IOException e) { e.printStackTrace(); } // Unchecked Exception int[] array = new int[5]; int value = array[10]; // Throws ArrayIndexOutOfBoundsException",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "1ae32425-a770-49cc-99e6-1b5c2dc99f2d",
+    "question": "Explain how exceptions propagate in the code.",
+    "answer": "Answer: When an exception occurs, it propagates up the call stack until it is caught by a corresponding catch block or terminates the program if uncaught. The JVM searches for the appropriate exception handler in the method where the exception occurred, then in the calling method, and so on. Example: public class PropagationExample { public static void main(String[] args) { try { method1(); } catch (Exception e) { System.out.println(\"Exception caught in main\"); } } static void method1() throws Exception { method2(); } static void method2() throws Exception { throw new Exception(\"Exception in method2\"); } }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "1aa61bdb-0dbd-410e-944a-9f349e9dc8b8",
+    "question": "Explain the final, finally, and finalize keywords.",
+    "answer": "Answer: final: Used to declare constants, prevent method overriding, and inheritance. finally: A block that always executes after a try-catch block, used for cleanup activities. finalize: A method invoked by the garbage collector before an object is reclaimed. It can be overridden to release resources. Example: final int CONSTANT = 10; try { // Code that may throw an exception } catch (Exception e) { e.printStackTrace(); } finally { System.out.println(\"Cleanup code\"); } @Override protected void finalize() throws Throwable { System.out.println(\"Finalize called\"); }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "8e6c72f6-5bfd-4161-9de6-e83337bff4bd",
+    "question": "Difference between throw and throws in Java.",
+    "answer": "Answer: throw: Used to explicitly throw an exception within a method or block. throws: Used in method signatures to declare that a method can throw specified exceptions. Example: void method() throws IOException { throw new IOException(\"Exception thrown\"); }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "b579f797-f6ea-4b63-b180-5c01f5785315",
+    "question": "How does the switch statement work in Java?",
+    "answer": "Answer: The switch statement allows multi-way branching based on the value of an expression. It compares the expression with constant values and executes the corresponding block of code. Example: int day = 3; switch (day) { case 1: System.out.println(\"Monday\"); break; case 2: System.out.println(\"Tuesday\"); break; case 3: System.out.println(\"Wednesday\"); break; default: System.out.println(\"Invalid day\"); }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "74e4652d-4be9-44cd-966c-56b09a9ec16e",
+    "question": "Explain the difference between ArrayList and LinkedList.",
+    "answer": "Answer: ArrayList: Uses a dynamic array, provides fast random access, and is efficient for read operations but slow for insertions and deletions. LinkedList: Uses a doubly linked list, provides efficient insertions and deletions, and is slower for random access. Example: List<Integer> arrayList = new ArrayList<>(); List<Integer> linkedList = new LinkedList<>();",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "ebc42b10-29a5-4f5c-b52f-0d79249b5a0b",
+    "question": "What is the transient keyword in Java?",
+    "answer": "Answer: The transient keyword is used in serialization to indicate that a field should not be serialized. This means the field will not be included in the serialized form of the object. Example: class Example implements Serializable { private transient int transientField; private int regularField; }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "a973f0f0-f476-4cc6-9d2a-06fced47981f",
+    "question": "What is the purpose of the instanceof operator?",
+    "answer": "Answer: The instanceof operator is used to test whether an object is an instance of a specific class or subclass. It helps in type checking and safe downcasting. Example: if (obj instanceof String) { String str = (String) obj; }",
+    "source": "25 JAVA specific questions for interviews.pdf"
+  },
+  {
+    "id": "bd40db5a-e1c4-4b58-a52b-e7f930ec4fef",
+    "question": ": What are some of the key features of Python?",
+    "answer": "In Python, variables are dynamically typed, meaning you do not need to declare the variable type explicitly. The type is determined at runtime based on the value assigned. For example: x = 10 # x is an integer x = \"hello\" # x is now a string This flexibility allows for quicker development but requires careful handling to avoid type-related errors. 2. How is Python different from C and Java:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "21874245-3ca2-46a3-ac9b-04f17c627132",
+    "question": ": How does Python differ from C and Java?",
+    "answer": "Dynamic typing allows for rapid prototyping and flexibility. For example, in Python, you can create a list that holds different data types: mixed_list = [1, \"hello\", 3.14, True] This flexibility is not easily achievable in statically typed languages without complex data structures. 3. Data Types in Python:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "59d965b0-f627-4586-abbd-b1f8f2a27cfe",
+    "question": ": What are the different data types in Python?",
+    "answer": "Python handles type conversion through explicit functions like int(), float(), str(), etc. Implicit conversion (type coercion) also happens in some operations. Example: x = 10 y = 3.14 z = x + y # z will be a float: 13.14 Explicit conversion: x = \"10\" y = int(x) # y is now an integer 10 4. List Comprehension:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "94c8a0e1-1e50-4af4-888b-c4d352987b34",
+    "question": ": What is list comprehension? Explain with examples.",
+    "answer": "Yes, the example can be modified to include only even numbers: even_squares = [x**2 for x in range(10) if x % 2 == 0] print(even_squares) # Output: [0, 4, 16, 36, 64] 5. Decorators:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "a367f7ab-d5fb-4dce-a871-925edc93ad24",
+    "question": ": What are decorators in Python? Explain with examples.",
+    "answer": "You can use the time module to create a timing decorator: import time def timer_decorator(func): def wrapper(*args, **kwargs): start_time = time.time() result = func(*args, **kwargs) end_time = time.time() print(f\"{func.__name__} took {end_time - start_time} seconds to execute.\") return result return wrapper @timer_decorator def example_function(): time.sleep(2) print(\"Function execution complete.\") example_function() Output: Function execution complete. example_function took 2.0021238327026367 seconds to execute. 6. Set and Dictionary:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "bcee9118-e5fd-4326-843f-d9471c83b373",
+    "question": ": Explain sets and dictionaries in Python and highlight the differences. Sets: Unordered collections of unique elements. my_set = {1, 2, 3, 4, 5} Dictionaries: Collections of key-value pairs. my_dict = {\"a\": 1, \"b\": 2, \"c\": 3} Differences: Sets: No duplicates, unordered, mutable. Dictionaries: Keys must be unique, unordered, mutable, and store key-value pairs. Follow-up Question: How would you use a dictionary to count the frequency of elements in a list?",
+    "answer": "You can use a dictionary to count frequencies as follows: my_list = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4] frequency_dict = {} for item in my_list: if item in frequency_dict: frequency_dict[item] += 1 else: frequency_dict[item] = 1 print(frequency_dict) # Output: {1: 1, 2: 2, 3: 3, 4: 4} 7. Lists vs Tuples:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "303ff17b-1c71-4366-9650-f8bd3363181e",
+    "question": ": What are the differences between lists and tuples in Python? Lists: Mutable. Dynamic size. More memory consumption. More built-in methods. Tuples: Immutable. Fixed size. Less memory consumption. Fewer built-in methods. Follow-up Question: When would you choose a tuple over a list?",
+    "answer": "Tuples are chosen over lists when immutability is desired, such as: When you want to ensure the data remains constant. For dictionary keys, where immutability is required. For storing multiple related values as a single entity, like coordinates (x, y). 8. Slicing:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "63e0f5e0-b0e7-40a9-8a5a-685aa025c76a",
+    "question": ": Explain slicing in Python with examples.",
+    "answer": "You can reverse a list using slicing as follows: my_list = [0, 1, 2, 3, 4, 5] reversed_list = my_list[::-1] print(reversed_list) # Output: [5, 4, 3, 2, 1, 0] 9. Sorting:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "5e45fc02-eb05-4bb1-9d56-0c526c9b64f3",
+    "question": ": Which sorting technique is used by Python in list.sort() or sorted()?",
+    "answer": "Timsort divides the data into small chunks (runs), sorts each run using insertion sort, and then merges the runs using merge sort. Apologies for the oversight! Let me continue addressing the remaining questions and their follow-ups: 10. Break, Continue, and Pass:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "1a9dd1df-8275-4567-a2f0-1498640d97ec",
+    "question": ": Explain break, continue, and pass statements in Python. Break: Terminates the loop it's currently in. Continue: Skips the rest of the current iteration and moves to the next iteration. Pass: Acts as a placeholder; it does nothing when executed. Follow-up Question: Can you provide examples of each in a loop?",
+    "answer": "Certainly! # Example of break statement for i in range(5): if i == 3: break print(i) # Output: 0, 1, 2 # Example of continue statement for i in range(5): if i == 3: continue print(i) # Output: 0, 1, 2, 4 # Example of pass statement for i in range(5): if i == 3: pass print(i) # Output: 0, 1, 2, 3, 4 11. Mutable and Immutable:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "acde799f-fa00-4cac-9c6d-95ea5fa2d094",
+    "question": ": Explain mutable and immutable types in Python with examples. Mutable: Objects whose value can be changed after creation. Example: lists, dictionaries, sets. Immutable: Objects whose value cannot be changed after creation. Example: tuples, strings, integers. Follow-up Question: Why are strings considered immutable?",
+    "answer": "Strings are considered immutable because once they are created, their contents cannot be changed or modified. Any operation that appears to modify a string actually creates a new string object. This immutability ensures that strings behave predictably and are suitable for use as dictionary keys or in multi-threaded environments. 12. PIP:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "427f440d-ddd2-41b0-9322-f819d5c488ba",
+    "question": ": What is PIP?",
+    "answer": "To install a package using PIP, you use the pip install command followed by the package name. For example: pip install requests This command installs the requests package, commonly used for making HTTP requests in Python. 13. Libraries in Python:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "6d40f418-bb78-476f-8b94-4f22490dc4b1",
+    "question": ": Explain what libraries are in Python. What are their uses, and can you name some common libraries?",
+    "answer": "You can import the math library using the import keyword: import math print(math.sqrt(25)) # Output: 5.0 This example calculates the square root of 25 using the sqrt function from the math library. 14. Shallow Copy and Deep Copy:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "40328dae-da1b-45a9-aa74-28c5851f24d5",
+    "question": ": Differentiate between shallow copy and deep copy. Shallow Copy: Creates a new object but inserts references to the original objects. Changes to the copied object's mutable elements will reflect in the original object. Deep Copy: Creates a completely new object with its own copy of the original object's elements. Changes to the copied object do not affect the original object. Follow-up Question: When would you use shallow copy instead of deep copy?",
+    "answer": "Shallow copy is useful when you need a new collection with the same elements but don't need to create copies of nested objects. It saves memory and can be faster. Deep copy, on the other hand, is suitable when you need to modify the copied object independently of the original, especially when dealing with nested structures. 15. Python Memory Management:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "818c5e8d-d09c-475e-b72a-d3a4f8d429d8",
+    "question": ": Explain Python memory management in detail. Automatic Memory Management: Python automatically manages memory through a mechanism called reference counting and garbage collection. Reference Counting: Each object contains a reference count that tracks the number of references to that object. When the count drops to zero, the memory occupied by the object is deallocated. Garbage Collection: Python's garbage collector periodically looks for objects with zero reference count and reclaims their memory. Follow-up Question: How does Python handle memory fragmentation?",
+    "answer": "Python's memory allocator handles fragmentation by using a combination of strategies like splitting blocks, merging adjacent free blocks, and occasionally moving objects. This helps in mitigating the impact of memory fragmentation on the performance of Python programs. 16. Operators:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "046d054c-81c4-4a63-bb6c-60dc0792a8a2",
+    "question": ": Can you explain operators in Python?",
+    "answer": "Operators in Python are symbols that perform operations on variables and values. They can be categorized into arithmetic, comparison, assignment, logical, bitwise, membership, and identity operators. Example: # Arithmetic operators x = 10 y = 5 print(x + y) # Addition print(x - y) # Subtraction print(x * y) # Multiplication print(x / y) # Division print(x % y) # Modulus print(x ** y) # Exponentiation # Comparison operators print(x == y) # Equal to print(x != y) # Not equal to print(x > y) # Greater than print(x < y) # Less than 17. Except in Python:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "1b948dbf-cdf2-46c1-addb-38183695ddaa",
+    "question": ": Explain except in Python with examples.",
+    "answer": "except is used in Python's exception handling mechanism to catch and handle exceptions. It is paired with try and optionally finally blocks. Example: try: x = 10 / 0 except ZeroDivisionError: print(\"Division by zero is not allowed.\") 18. How to change a string:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "7a132151-778e-46f4-a90a-e7294d2b5ceb",
+    "question": ": How can you change a string in Python?",
+    "answer": "Strings are immutable in Python, meaning their values cannot be changed after creation. However, you can create a new string with the desired modifications. Example: my_string = \"Hello\" modified_string = my_string + \", World!\" print(modified_string) # Output: Hello, World! 19. Difference between global and local variable:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "0c2ffe54-76e0-45ab-ab38-6112886cc906",
+    "question": ": What is PEP in Python?",
+    "answer": "PEP stands for Python Enhancement Proposal. It is a design document providing information or describing a new feature for Python or its processes. PEPs are the primary mechanisms for proposing major changes to the language, including enhancements, new features, and standards. Example: PEP 8 provides style guidelines for Python code. 21. Scopes of Python:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "5c4c0bbd-d2b7-4fbf-a720-e073f76e8c5a",
+    "question": ": Explain the scopes of Python.",
+    "answer": "Python has four levels of variable scopes: Local Scope: Variables defined within a function. Enclosing Scope: Variables in the local scope of enclosing functions (for nested functions). Global Scope: Variables defined at the top level of a module. Built-in Scope: Variables built into the Python interpreter. Example: x = 10 # Global scope def my_function(): y = 5 # Local scope print(x) # Accessing global variable my_function() 22. Lambda Function in Python:",
+    "source": "python interview questions.pdf"
+  },
+  {
+    "id": "15514a1c-dcd8-4c35-b841-21553f8b6d92",
+    "question": ": What is a lambda function in Python? Provide examples.",
+    "answer": "Lambda functions, also known as anonymous functions, are small, single-expression functions that are not bound to a name. They are defined using the lambda keyword. Example: # Regular function def add(x, y): return x + y print(add(5, 3)) # Output: 8 # Lambda function add_lambda = lambda x, y: x + y print(add_lambda(5, 3)) # Output: 8 Lambda functions are often used in situations where a function is needed for a short period and won't be referenced later. These explanations should provide you with a good understanding of the mentioned topics in relation to Python. Let me know if you have any further questions!",
+    "source": "python interview questions.pdf"
+  }
+]
