@@ -6,6 +6,9 @@ class Config:
     # Prisma (Postgres via Railway)
     DATABASE_URL = os.getenv("DATABASE_URL")  
 
+    SECRET_KEY = os.getenv("SECRET_KEY", "super-secret")  
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "super-secret-jwt")
+
     # Redis
     REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
     REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
