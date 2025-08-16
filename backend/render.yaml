@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ladder1-backend
+    env: python
+    runtime: python-3.11.9
+    buildCommand: |
+      pip install -r requirements.txt
+      npx prisma generate --schema=prisma/schema.prisma
+    startCommand: python app.py
