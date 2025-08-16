@@ -5,7 +5,7 @@ import hashlib
 import faiss
 from urllib.parse import urlparse
 from sentence_transformers import SentenceTransformer
-from models import User
+from prisma import Prisma  
 
 # ===== Redis Connection =====
 redis_url = os.getenv("REDIS_URL")
@@ -101,9 +101,9 @@ def set_cached_transcription(audio_hash, text, ttl=3600):
     r.setex(f"stt:{audio_hash}", ttl, text.encode())
 
 # ===== Resume Caching & Embeddings =====
-def get_resume_text(user_id):
+async def get_resume_text(user_id: int):
     """
-    Fetch resume text from Redis first, then DB if missing.
+    Fetch resume text from Redis first, then DB via Prisma if missing.
     Cache it in Redis for 24 hours.
     """
     key = f"resume:{user_id}"
@@ -111,10 +111,13 @@ def get_resume_text(user_id):
     if data:
         return data.decode()
 
-    user = User.query.get(user_id)
-    if user and user.resume_text:
-        r.setex(key, 86400, user.resume_text)
-        return user.resume_text
+    await prisma.connect()
+    user = await prisma.user.find_unique(where={"id": user_id})
+    await prisma.disconnect()
+
+    if user and user.resumeText:
+        r.setex(key, 86400, user.resumeText)
+        return user.resumeText
     return None
 
 def store_resume_embedding(user_id, resume_text):

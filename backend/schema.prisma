@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client.py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  resumeText   String?
+  createdAt    DateTime @default(now())
+
+  sessions     InterviewSession[]
+}
+
+model InterviewSession {
+  id        Int                 @id @default(autoincrement())
+  userId    Int
+  startedAt DateTime            @default(now())
+  endedAt   DateTime?
+
+  user      User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questions InterviewQuestion[]
+}
+
+model InterviewQuestion {
+  id            Int      @id @default(autoincrement())
+  sessionId     Int
+  question      String
+  answer        String?
+  score         Json?
+  flaggedScript Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  session       InterviewSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
