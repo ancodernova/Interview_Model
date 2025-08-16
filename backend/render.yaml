@@ -4,7 +4,8 @@ services:
     env: python
     runtime: python-3.11.9
     buildCommand: |
-      npx prisma generate --schema=schema.prisma
       pip install -r requirements.txt
+      python -m prisma generate
+
       
     startCommand: python app.py
